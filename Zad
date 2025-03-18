@@ -1,0 +1,16 @@
+const password = document.getElementById("password");
+const message = document.getElementById("message");
+
+password.addEventListener("input", () => {
+    let length = password.value.length;
+
+    if (length >= 1 && length <= 5) {
+        message.textContent = "Hasło za krótkie";
+    } else if (length >= 6 && length <= 8) {
+        message.textContent = "Hasło średnie";
+    } else if (length > 8) {
+        message.textContent = "Dobre hasło";
+    } else {
+        message.textContent = "";
+    }
+});
