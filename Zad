@@ -1,16 +1,99 @@
-const password = document.getElementById("password");
-const message = document.getElementById("message");
+ChatGPT
+Powiedziałeś(-aś):
+Siema napisz mi stronę z efektem paralax kodu CSS nie mam ale mam coś w HTML nie wiem czy to dobrze mam trzy obrazki 
+ChatGPT powiedział:
+Siema! Jasne, pomogę Ci stworzyć prostą stronę z efektem parallax dla trzech obrazków. Poniżej masz kompletny kod w trzech plikach:
 
-password.addEventListener("input", () => {
-    let length = password.value.length;
+✅ 1. index.html
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Efekt Parallax</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
-    if (length >= 1 && length <= 5) {
-        message.textContent = "Hasło za krótkie";
-    } else if (length >= 6 && length <= 8) {
-        message.textContent = "Hasło średnie";
-    } else if (length > 8) {
-        message.textContent = "Dobre hasło";
-    } else {
-        message.textContent = "";
-    }
-});
+  <section class="parallax" id="parallax1">
+    <div class="content">
+      <h1>Obrazek 1</h1>
+    </div>
+  </section>
+
+  <section class="text-section">
+    <p>To jest sekcja tekstowa pomiędzy obrazkami. Możesz tu wstawić dowolną treść.</p>
+  </section>
+
+  <section class="parallax" id="parallax2">
+    <div class="content">
+      <h1>Obrazek 2</h1>
+    </div>
+  </section>
+
+  <section class="text-section">
+    <p>Jeszcze jedna sekcja tekstowa do testu paralaksy. Działa dobrze!</p>
+  </section>
+
+  <section class="parallax" id="parallax3">
+    <div class="content">
+      <h1>Obrazek 3</h1>
+    </div>
+  </section>
+
+</body>
+</html>
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  scroll-behavior: smooth;
+}
+
+.parallax {
+  position: relative;
+  height: 100vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.7);
+}
+
+#parallax1 {
+  background-image: url('obrazek1.jpg'); /* Zamień na ścieżkę do swojego pierwszego obrazka */
+}
+
+#parallax2 {
+  background-image: url('obrazek2.jpg'); /* Zamień na ścieżkę do swojego drugiego obrazka */
+}
+
+#parallax3 {
+  background-image: url('obrazek3.jpg'); /* Zamień na ścieżkę do swojego trzeciego obrazka */
+}
+
+.text-section {
+  padding: 80px 20px;
+  background-color: #f4f4f4;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.content h1 {
+  font-size: 3rem;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  border-radius: 10px;
+}
+
