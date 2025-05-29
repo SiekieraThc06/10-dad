@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Rotacja elementu</title>
+  <style>
+    body {
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .loader {
+      width: 100px;
+      height: 100px;
+      border: 10px solid #ccc;
+      border-top: 10px solid #3498db;
+      border-radius: 50%;
+      animation: rotate360 2s linear infinite;
+    }
+
+    @keyframes rotate360 {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="loader"></div>
+</body>
+</html>
